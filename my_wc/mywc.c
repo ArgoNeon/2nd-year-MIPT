@@ -90,7 +90,6 @@ void nameless_wc(int argn, char* argv[], int l, int w, int c, int total) {
   }
 }
 
-//------------------------------------------------------------------------------------------
 int main(int argn, char* argv[]) {
   int i, get, l = 0, w = 0, c = 0;
   const char* optstring = "l:w:c:";
