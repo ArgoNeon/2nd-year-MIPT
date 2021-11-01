@@ -255,7 +255,7 @@ inter00:
 int main (int argn, char* argv []) {
 	struct options option = {0, 0, 0, 0};
 	struct direct input;
-	char buf[4096];
+	char buf[BUF];
 	const char* optstring = ":vfi";
 	static struct option long_op[] = {
 		{"verbose", 0, 0, 'v'},
