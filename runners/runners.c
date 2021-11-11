@@ -123,18 +123,9 @@ int main(int argn, const char* argv[]) {
 
   if (argn == 2) {
     n = atoi(argv[1]);
-
     key = ftok("run", 0);
-
     id = msgget(key, IPC_CREAT | 0777);
-
-    if (id < 0) {
-      perror(get_err);
-      errno;
-      return -1;
-    }
-
-    printf("key: %d\nid: %d\n", key, id);
+    check_err(id, get_err);
 
     for (i = 1; i <= n; i++) {
       pid = fork();
@@ -146,13 +137,7 @@ int main(int argn, const char* argv[]) {
 
     judge(n, id);
     ctl = msgctl(id, IPC_RMID, NULL);
-
-    if (ctl < 0) {
-      perror(ctl_err);
-      errno;
-      return -1;
-    }
-
+    check_err(ctl, ctl_err);
     return 0;
   } else {
     printf("Write only number of runners.\n");
