@@ -267,10 +267,10 @@ int main(int argn, char* argv[]) {
 
   switch (argn) {
     case 1:
-      printf("mycp: missing file operand\n");
+      //printf("mycp: missing file operand\n");
       break;
     case 2:
-      printf("cp: missing destination file operand after '%s'\n", argv[1]);
+      //printf("cp: missing destination file operand after '%s'\n", argv[1]);
       break;
     default:
 
